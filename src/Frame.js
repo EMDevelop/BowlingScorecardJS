@@ -9,9 +9,8 @@ class Frame {
 
   calculateFrameTotal() {
     this._sumCurrentFrame();
-    console.log(this.currentFrame);
-    console.log(this._isStrike(this.currentFrame));
     this._isStrike(this.currentFrame) && this._handleStrike();
+    this._isSpare(this.currentFrame) && this._handleSpare();
   }
 
   _sumCurrentFrame() {
@@ -29,7 +28,15 @@ class Frame {
     }
   }
 
+  _handleSpare() {
+    this.frameTotal += this.followingFrameOne[0];
+  }
+
   _isStrike(frame) {
     return frame.length === 1;
+  }
+
+  _isSpare(frame) {
+    return frame[0] + frame[1] === 10;
   }
 }

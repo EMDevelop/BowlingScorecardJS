@@ -105,6 +105,40 @@ describe("BowlingScorecard", function () {
     ).toBe(49);
   });
 
+  it("3 consecutive strikes", function () {
+    expect(
+      game.score([
+        [10],
+        [10],
+        [10],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+      ])
+    ).toBe(77);
+  });
+
+  it("sums a spare", function () {
+    expect(
+      game.score([
+        [1, 9],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+      ])
+    ).toBe(29);
+  });
+
   // To be refactored into input error messages
   // it("Sums 1 score", function () {
   //   expect(game.score([[1]])).toBe(1);
