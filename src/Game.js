@@ -11,7 +11,18 @@ class Game {
     this.playerScores = playerScores;
     this._loopCreateFrames();
     this._loopSumFrames();
+    console.log(`data input: ${playerScores}`);
+    console.log(`frames: ${this.frames}`);
     return this.gameTotal;
+  }
+
+  resetScores() {
+    this.gameTotal = 0;
+    this.frameLoop = 1;
+    this.frames = [];
+    this.frames.forEach((frame) => {
+      frame.frameTotal = 0;
+    });
   }
 
   _gameResult() {
