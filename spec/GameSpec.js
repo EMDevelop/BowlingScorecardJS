@@ -1,11 +1,11 @@
 describe("BowlingScorecard", function () {
-  const game = new Game();
+  const bowling = new Bowling();
 
   it("Sums 1 score", function () {
-    expect(game.score([[1]])).toBe(1);
+    expect(bowling.score([[1]])).toBe(1);
   });
 
   it("Sums 2 scores", function () {
-    expect(game.score([[1, 1]])).toBe(2);
+    expect(bowling.score([[1, 1]])).toBe(2);
   });
 });
