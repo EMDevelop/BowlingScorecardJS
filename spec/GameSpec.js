@@ -88,6 +88,23 @@ describe("BowlingScorecard", function () {
     ).toBe(30);
   });
 
+  it("2 consecutive strikes", function () {
+    expect(
+      game.score([
+        [10],
+        [10],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+      ])
+    ).toBe(49);
+  });
+
   // To be refactored into input error messages
   // it("Sums 1 score", function () {
   //   expect(game.score([[1]])).toBe(1);

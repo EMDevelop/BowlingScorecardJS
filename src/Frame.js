@@ -22,7 +22,11 @@ class Frame {
   }
 
   _handleStrike() {
-    this.frameTotal += this.followingFrameOne[0] + this.followingFrameOne[1];
+    if (this._isStrike(this.followingFrameOne)) {
+      this.frameTotal += this.followingFrameOne[0] + this.followingFrameTwo[0];
+    } else {
+      this.frameTotal += this.followingFrameOne[0] + this.followingFrameOne[1];
+    }
   }
 
   _isStrike(frame) {
