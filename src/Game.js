@@ -1,5 +1,5 @@
 class Game {
   score(scores_list) {
-    return scores_list[0][0];
+    return scores_list[0].reduce((firstScore, secondScore) => firstScore + secondScore);
   }
 }

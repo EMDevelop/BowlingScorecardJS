@@ -5,7 +5,7 @@ describe("BowlingScorecard", function () {
     expect(game.score([[1]])).toBe(1);
   });
 
-  // it("Sums 2 scores", function () {
-  //   expect(game.score([1, 1])).toBe(2);
-  // });
+  it("Sums 2 scores", function () {
+    expect(game.score([[1, 1]])).toBe(2);
+  });
 });
