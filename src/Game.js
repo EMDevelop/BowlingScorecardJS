@@ -1,5 +1,5 @@
 class Game {
-  score() {
-    return 1;
+  score(scores_list) {
+    return scores_list[0][0];
   }
 }
