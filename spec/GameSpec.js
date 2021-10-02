@@ -4,19 +4,57 @@ describe("BowlingScorecard", function () {
   });
 
   it("Sums 1 score", function () {
-    expect(game.score([[1]])).toBe(1);
+    expect(
+      game.score([
+        [1, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+      ])
+    ).toBe(1);
   });
 
   it("Sums 2 scores", function () {
-    expect(game.score([[1, 1]])).toBe(2);
+    expect(
+      game.score([
+        [1, 1],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+      ])
+    ).toBe(2);
   });
 
   it("Sums 3 scores from 2 frames", function () {
-    expect(game.score([[1, 1], [1]])).toBe(3);
+    expect(
+      game.score([
+        [1, 1],
+        [1, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+      ])
+    ).toBe(3);
   });
 
   it("Sums a full game with 10 frames", function () {
-    console.log(game);
     expect(
       game.score([
         [1, 1],
@@ -32,4 +70,34 @@ describe("BowlingScorecard", function () {
       ])
     ).toBe(20);
   });
+
+  it("sums a strike", function () {
+    expect(
+      game.score([
+        [10],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+      ])
+    ).toBe(30);
+  });
+
+  // To be refactored into input error messages
+  // it("Sums 1 score", function () {
+  //   expect(game.score([[1]])).toBe(1);
+  // });
+
+  // it("Sums 2 scores", function () {
+  //   expect(game.score([[1, 1]])).toBe(2);
+  // });
+
+  // it("Sums 3 scores from 2 frames", function () {
+  //   expect(game.score([[1, 1], [1]])).toBe(3);
+  // });
 });
