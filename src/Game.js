@@ -2,43 +2,49 @@ class Game {
   constructor() {
     this.frames = [];
     this.MAX_FRAMES = 10;
-    this.userScores;
-    this.frameLoop = 0;
+    this.playerScores;
+    this.frameLoop = 1;
+    this.gameTotal = 0;
   }
 
-  score(userScores) {
-    this.userScores = userScores;
-    while (this.frameLoop < this.MAX_FRAMES) {
-      this._loopFrames();
-    }
-    let totalScore = 0;
-    userScores.forEach((frame) => {
-      let frameTotal = frame.reduce(
-        (firstScore, secondScore) => firstScore + secondScore,
-        0
-      );
-      totalScore += frameTotal;
+  score(playerScores) {
+    this.playerScores = playerScores;
+    this._loopCreateFrames();
+    this._loopSumFrames();
+    return this.gameTotal;
+  }
+
+  _gameResult() {
+    this.gameTotal;
+  }
+
+  _loopSumFrames() {
+    this.frames.forEach((frame) => {
+      frame.calculateFrameTotal();
+      this.gameTotal += frame.frameTotal;
     });
-    return totalScore;
   }
 
-  _loopFrames() {
-    this._createFrames(this.frameLoop);
-    // this._sumFrames();
-    this.frameLoop++;
+  _loopCreateFrames() {
+    while (this.frameLoop <= this.MAX_FRAMES) {
+      this._createFrames(); // creating frames 1 by 1 in loop
+      this.frameLoop++;
+    }
   }
+
+  _sumTotal() {}
 
   _createFrames() {
-    let frame = this._createFrameInstance(this.frameLoop);
+    let frame = this._createFrameInstance();
     this.frames.push(frame);
   }
 
   _createFrameInstance() {
     return new Frame({
-      frameNumber: this.frameLoop + 1,
-      currentFrame: this.userScores[this.frameLoop + 1],
-      followingFrameOne: this.userScores[this.frameLoop + 2],
-      followingFrameTwo: this.userScores[this.frameLoop + 3],
+      frameNumber: this.frameLoop,
+      currentFrame: this.playerScores[this.frameLoop - 1],
+      followingFrameOne: this.playerScores[this.frameLoop],
+      followingFrameTwo: this.playerScores[this.frameLoop + 1],
     });
   }
 }

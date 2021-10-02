@@ -1,5 +1,7 @@
 describe("BowlingScorecard", function () {
-  const game = new Game();
+  beforeEach(function () {
+    game = new Game();
+  });
 
   it("Sums 1 score", function () {
     expect(game.score([[1]])).toBe(1);
@@ -14,6 +16,7 @@ describe("BowlingScorecard", function () {
   });
 
   it("Sums a full game with 10 frames", function () {
+    console.log(game);
     expect(
       game.score([
         [1, 1],
