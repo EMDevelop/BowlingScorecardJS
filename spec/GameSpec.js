@@ -173,6 +173,23 @@ describe("BowlingScorecard", function () {
     ).toBe(300);
   });
 
+  it("handles 10th game", function () {
+    expect(
+      game.score([
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+      ])
+    ).toBe(0);
+  });
+
   // To be refactored into input error messages
   // it("Sums 1 score", function () {
   //   expect(game.score([[1]])).toBe(1);
