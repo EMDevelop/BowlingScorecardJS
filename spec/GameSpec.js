@@ -139,6 +139,40 @@ describe("BowlingScorecard", function () {
     ).toBe(29);
   });
 
+  it("handles 10th game", function () {
+    expect(
+      game.score([
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [1, 1],
+        [10],
+        [10, 10, 10],
+      ])
+    ).toBe(76);
+  });
+
+  it("handles 10th game", function () {
+    expect(
+      game.score([
+        [10],
+        [10],
+        [10],
+        [10],
+        [10],
+        [10],
+        [10],
+        [10],
+        [10],
+        [10, 10, 10],
+      ])
+    ).toBe(300);
+  });
+
   // To be refactored into input error messages
   // it("Sums 1 score", function () {
   //   expect(game.score([[1]])).toBe(1);
