@@ -11,8 +11,6 @@ class Game {
     this.playerScores = playerScores;
     this._loopCreateFrames();
     this._loopSumFrames();
-    console.log(`data input: ${playerScores}`);
-    console.log(`frames: ${this.frames}`);
     return this.gameTotal;
   }
 

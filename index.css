@@ -26,8 +26,8 @@ input {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  background-color: rgba(255, 192, 203, 0.551);
-  border: solid 1px rgba(255, 192, 203, 0.551);
+  background-color: rgba(36, 184, 243, 0.274);
+  border: solid 1px rgba(36, 184, 243, 0.274);
   color: var(--text);
 }
 
@@ -51,6 +51,7 @@ input:active {
   width: 100%;
   max-width: 1920px;
   height: 90vh;
+  background-color: rgba(36, 184, 243, 0.274);
 }
 
 .score-card-container {
@@ -65,14 +66,14 @@ input:active {
   max-width: 1500px;
   height: 40vh;
   border-radius: 25px;
-  box-shadow: 1px 1px 15px 8px #e4e3e394;
+  /* box-shadow: 1px 1px 15px 8px #e4e3e394; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 40px;
   justify-content: center;
   align-items: center;
   justify-items: center;
-  background-color: rgba(151, 197, 237, 0.126);
+  /* background-color: rgba(151, 197, 237, 0.126); */
 }
 
 .standard_frame_container {
@@ -82,7 +83,7 @@ input:active {
   width: 160px;
   display: flex;
   flex-direction: column;
-  background-color: inherit;
+  background-color: white;
   box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.941);
   filter: blur(0.5px);
 }
@@ -123,7 +124,4 @@ input:active {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.standard_frame_container {
 }

@@ -56,7 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 2
   document.querySelector("#fr-2-r-1").addEventListener("change", (e) => {
-    data[1][0] = e.target.value ? parseInt(e.target.value) : 0;
+    if (parseInt(e.target.value) === 10) {
+      data[1] = [10];
+      document.getElementById("fr-2-r-2").value = 0;
+    } else {
+      data[1] = [e.target.value ? parseInt(e.target.value) : 0, 0];
+    }
     update(data);
   });
 
@@ -67,7 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3
   document.querySelector("#fr-3-r-1").addEventListener("change", (e) => {
-    data[2][0] = e.target.value ? parseInt(e.target.value) : 0;
+    if (parseInt(e.target.value) === 10) {
+      data[2] = [10];
+      document.getElementById("fr-3-r-2").value = 0;
+    } else {
+      data[2] = [e.target.value ? parseInt(e.target.value) : 0, 0];
+    }
     update(data);
   });
 
@@ -78,7 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 4
   document.querySelector("#fr-4-r-1").addEventListener("change", (e) => {
-    data[3][0] = e.target.value ? parseInt(e.target.value) : 0;
+    if (parseInt(e.target.value) === 10) {
+      data[3] = [10];
+      document.getElementById("fr-4-r-2").value = 0;
+    } else {
+      data[3] = [e.target.value ? parseInt(e.target.value) : 0, 0];
+    }
     update(data);
   });
 
@@ -89,7 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 5
   document.querySelector("#fr-5-r-1").addEventListener("change", (e) => {
-    data[4][0] = e.target.value ? parseInt(e.target.value) : 0;
+    if (parseInt(e.target.value) === 10) {
+      data[4] = [10];
+      document.getElementById("fr-5-r-2").value = 0;
+    } else {
+      data[4] = [e.target.value ? parseInt(e.target.value) : 0, 0];
+    }
     update(data);
   });
 
@@ -100,7 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 6
   document.querySelector("#fr-6-r-1").addEventListener("change", (e) => {
-    data[5][0] = e.target.value ? parseInt(e.target.value) : 0;
+    if (parseInt(e.target.value) === 10) {
+      data[5] = [10];
+      document.getElementById("fr-6-r-2").value = 0;
+    } else {
+      data[5] = [e.target.value ? parseInt(e.target.value) : 0, 0];
+    }
     update(data);
   });
 
@@ -109,14 +134,68 @@ document.addEventListener("DOMContentLoaded", () => {
     update(data);
   });
 
-  // 6
+  // 7
   document.querySelector("#fr-7-r-1").addEventListener("change", (e) => {
-    data[6][0] = e.target.value ? parseInt(e.target.value) : 0;
+    if (parseInt(e.target.value) === 10) {
+      data[6] = [10];
+      document.getElementById("fr-7-r-2").value = 0;
+    } else {
+      data[6] = [e.target.value ? parseInt(e.target.value) : 0, 0];
+    }
     update(data);
   });
 
   document.querySelector("#fr-7-r-2").addEventListener("change", (e) => {
     data[6][1] = e.target.value ? parseInt(e.target.value) : 0;
+    update(data);
+  });
+
+  // 8
+  document.querySelector("#fr-8-r-1").addEventListener("change", (e) => {
+    if (parseInt(e.target.value) === 10) {
+      data[7] = [10];
+      document.getElementById("fr-8-r-2").value = 0;
+    } else {
+      data[7] = [e.target.value ? parseInt(e.target.value) : 0, 0];
+    }
+    update(data);
+  });
+
+  document.querySelector("#fr-8-r-2").addEventListener("change", (e) => {
+    data[7][1] = e.target.value ? parseInt(e.target.value) : 0;
+    update(data);
+  });
+  // 9
+  document.querySelector("#fr-9-r-1").addEventListener("change", (e) => {
+    if (parseInt(e.target.value) === 10) {
+      data[8] = [10];
+      document.getElementById("fr-9-r-2").value = 0;
+    } else {
+      data[8] = [e.target.value ? parseInt(e.target.value) : 0, 0];
+    }
+    update(data);
+  });
+
+  document.querySelector("#fr-9-r-2").addEventListener("change", (e) => {
+    data[8][1] = e.target.value ? parseInt(e.target.value) : 0;
+    update(data);
+  });
+
+  // 10
+  document.querySelector("#fr-10-r-1").addEventListener("change", (e) => {
+    // console.log(data[9]);
+    // console.log(game.frames[9].frameTotal);
+    data[9][0] = e.target.value ? parseInt(e.target.value) : 0;
+    update(data);
+  });
+
+  document.querySelector("#fr-10-r-2").addEventListener("change", (e) => {
+    data[9][1] = e.target.value ? parseInt(e.target.value) : 0;
+    update(data);
+  });
+
+  document.querySelector("#fr-10-r-3").addEventListener("change", (e) => {
+    data[9][2] = e.target.value ? parseInt(e.target.value) : 0;
     update(data);
   });
 });

@@ -8,9 +8,29 @@ class Frame {
   }
 
   calculateFrameTotal() {
-    this._sumCurrentFrame();
-    this._isStrike(this.currentFrame) && this._handleStrike();
-    this._isSpare(this.currentFrame) && this._handleSpare();
+    if (this.frameNumber === 10) {
+      this._calculateLastFrame();
+    } else {
+      this._sumCurrentFrame();
+      this._isStrike(this.currentFrame) && this._handleStrike();
+      this._isSpare(this.currentFrame) && this._handleSpare();
+    }
+  }
+
+  _calculateLastFrame() {
+    if (this._isStrikeOrSpare()) {
+      this.frameTotal +=
+        this.currentFrame[0] + this.currentFrame[1] + this.currentFrame[2];
+    } else {
+      this.frameTotal += this.currentFrame[0] + this.currentFrame[1];
+    }
+  }
+
+  _isStrikeOrSpare() {
+    return (
+      this.currentFrame[0] + this.currentFrame[1] === 10 ||
+      this.currentFrame[0] === 10
+    );
   }
 
   _sumCurrentFrame() {

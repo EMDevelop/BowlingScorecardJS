@@ -35,6 +35,7 @@ describe("BowlingScorecard", function () {
         [0, 0],
       ])
     ).toBe(2);
+    console.log(game);
   });
 
   it("Sums 3 scores from 2 frames", function () {
@@ -188,6 +189,23 @@ describe("BowlingScorecard", function () {
         [0, 0],
       ])
     ).toBe(0);
+  });
+
+  it("edge", function () {
+    expect(
+      game.score([
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [10, 0, 0],
+      ])
+    ).toBe(10);
   });
 
   // To be refactored into input error messages
