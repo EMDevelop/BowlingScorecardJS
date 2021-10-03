@@ -2,6 +2,22 @@
 
 This is an application in which a user can input scores from their game of bowling, and receive a score as an output.
 
+---
+
+## Preview
+
+![](https://github.com/EMDevelop/public_resources/blob/main/gifs/Bowling/BowlingUI.gif)
+
+---
+
+## How to run
+
+- Clone this repository `git clone https://github.com/EMDevelop/BowlingScorecardJS.git`
+- Open the command line withing the `BowlingScorecardJs` file
+- Run `open index.html`
+
+---
+
 ## Rules
 
 - A game consists of 10 Frames
@@ -33,11 +49,3 @@ This is an application in which a user can input scores from their game of bowli
 | [[10],[10],[10],[10],[10],[10],[10],[10],[10,10,10]]                | 300, "perfect game1"     |
 | [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]       | 0, "gutter game!"        |
 | []                                                                  | "Enter at least 1 score" |
-
-Most likely want a class method on the Frame, which will create a new frame with a number and add that to an array of frames.
-
-## Domain
-
-- ## Game class
-- Frame class
-  - Array of Frames (class)

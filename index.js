@@ -13,6 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
     [0, 0, 0],
   ];
 
+  const reset = [
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0],
+    [0, 0, 0],
+  ];
+
   const updateScores = (data) => {
     game.score(data);
   };
@@ -28,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#fr-8").innerText = game.frames[7].frameTotal;
     document.querySelector("#fr-9").innerText = game.frames[8].frameTotal;
     document.querySelector("#fr-10").innerText = game.frames[9].frameTotal;
+    document.querySelector("#total-score").innerText = game.gameTotal;
   };
 
   const update = (data) => {
@@ -37,6 +51,57 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   update(data);
+
+  const updateInputFields = () => {
+    document.getElementById("fr-1-r-1").value = "";
+    document.getElementById("fr-1-r-2").value = "";
+    document.getElementById("fr-2-r-1").value = "";
+    document.getElementById("fr-2-r-2").value = "";
+    document.getElementById("fr-3-r-1").value = "";
+    document.getElementById("fr-3-r-2").value = "";
+    document.getElementById("fr-4-r-1").value = "";
+    document.getElementById("fr-4-r-2").value = "";
+    document.getElementById("fr-5-r-1").value = "";
+    document.getElementById("fr-5-r-2").value = "";
+    document.getElementById("fr-6-r-1").value = "";
+    document.getElementById("fr-6-r-2").value = "";
+    document.getElementById("fr-7-r-1").value = "";
+    document.getElementById("fr-7-r-2").value = "";
+    document.getElementById("fr-8-r-1").value = "";
+    document.getElementById("fr-8-r-2").value = "";
+    document.getElementById("fr-9-r-1").value = "";
+    document.getElementById("fr-9-r-2").value = "";
+    document.getElementById("fr-10-r-1").value = "";
+    document.getElementById("fr-10-r-2").value = "";
+    document.getElementById("fr-10-r-3").value = "";
+    document.querySelector("#fr-1").innerText = "";
+    document.querySelector("#fr-2").innerText = "";
+    document.querySelector("#fr-3").innerText = "";
+    document.querySelector("#fr-4").innerText = "";
+    document.querySelector("#fr-5").innerText = "";
+    document.querySelector("#fr-6").innerText = "";
+    document.querySelector("#fr-7").innerText = "";
+    document.querySelector("#fr-8").innerText = "";
+    document.querySelector("#fr-9").innerText = "";
+    document.querySelector("#fr-10").innerText = "";
+    document.querySelector("#total-score").innerText = "";
+  };
+
+  updateInputFields();
+
+  const resetEntireGame = () => {
+    game.resetScores();
+    data = reset;
+    update(data);
+    updateInputFields();
+    updateFrames();
+  };
+
+  // reset
+  document.querySelector("#reset-score").addEventListener("click", () => {
+    // console.log("clicked");
+    resetEntireGame();
+  });
 
   // 1
   document.querySelector("#fr-1-r-1").addEventListener("change", (e) => {
@@ -184,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 10
   document.querySelector("#fr-10-r-1").addEventListener("change", (e) => {
     // console.log(data[9]);
-    // console.log(game.frames[9].frameTotal);
+    // console.log("";
     data[9][0] = e.target.value ? parseInt(e.target.value) : 0;
     update(data);
   });
